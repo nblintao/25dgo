@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5D Go</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2.5D Go</h1>
+            <p class="subtitle">A Three-Dimensional Go Variant</p>
+        </header>
+
+        <div class="game-layout">
+            <aside class="sidebar">
+                <div class="info-panel">
+                    <h2>Game Info</h2>
+                    <div class="current-player">
+                        <span class="label">Current Player:</span>
+                        <span id="currentPlayer" class="player-indicator"></span>
+                    </div>
+                    <div class="move-count">
+                        <span class="label">Move:</span>
+                        <span id="moveCount">0</span>
+                    </div>
+                    <div class="captures">
+                        <div class="capture-item">
+                            <span class="stone black-stone-small"></span>
+                            <span id="blackCaptures">0</span>
+                        </div>
+                        <div class="capture-item">
+                            <span class="stone white-stone-small"></span>
+                            <span id="whiteCaptures">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-panel">
+                    <h2>Controls</h2>
+                    <button id="newGameBtn" class="btn btn-primary">New Game</button>
+                    <button id="passBtn" class="btn btn-secondary">Pass</button>
+                    <button id="undoBtn" class="btn btn-secondary">Undo</button>
+
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="showLibertiesToggle" checked>
+                            <span>Show Liberties</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rules-panel">
+                    <h2>Quick Rules</h2>
+                    <ul>
+                        <li>Stones have up to 5 liberties (4 planar + 1 vertical)</li>
+                        <li>Capture groups with no liberties</li>
+                        <li>Ko rule applies</li>
+                        <li>Chinese rules scoring</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="board-container">
+                <div class="layer-label">Upper Layer</div>
+                <svg id="upperBoard" class="board-svg"></svg>
+
+                <div class="layer-label">Lower Layer</div>
+                <svg id="lowerBoard" class="board-svg"></svg>
+            </main>
+        </div>
+    </div>
+
+    <script src="GameEngine.js"></script>
+    <script src="BoardRenderer.js"></script>
+    <script src="GameController.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
