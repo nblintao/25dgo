@@ -1,1 +1,14 @@
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+*.egg-info/
+
+# RL Training artifacts
+rl-training/checkpoints/
+rl-training/runs/
